@@ -1,3 +1,4 @@
+import { Footer } from "@/components/footer";
 import { Navbar } from "./_components/navbar";
 
 const HomeLayout = ({children}: {
@@ -13,6 +14,9 @@ const HomeLayout = ({children}: {
             <main className="pt-[140px] h-full">
                 {children}
             </main>
+            <footer className="bg-yellow-400">
+                <Footer />
+            </footer>
         </div> 
     );
 }

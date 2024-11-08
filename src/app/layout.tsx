@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import { Sen } from 'next/font/google'
+import { Toaster } from "react-hot-toast";
 
 const sen = Sen({
   variable: "--font-sen",
@@ -35,6 +36,7 @@ export default function RootLayout({
       <body
         className={`${sen.variable} ${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <Toaster />
         {children}
       </body>
     </html>

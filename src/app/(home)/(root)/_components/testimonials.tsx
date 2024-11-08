@@ -1,4 +1,5 @@
 import AutoScrollList from "./autoscroll-list";
+import { ImageCard } from "./image-card";
 import { TestimonialCard } from "./testimonial-card";
 
 const studentTestimonials = [
@@ -111,7 +112,7 @@ export const Testimonials = () => {
     return (
         <div className="w-full">
             <div className="mb-10">
-                <h1 className="pl-40 pr-40 font-bold text-4xl mb-6 bg-red">
+                <h1 className="pl-40 pr-40 font-bold text-4xl mb-6">
                     Student Testimonials
                 </h1>
                 <AutoScrollList items={studentTestimonials} />
@@ -121,6 +122,24 @@ export const Testimonials = () => {
                     Teacher Testimonials
                 </h1>
                 <AutoScrollList items={teacherTestimonals} />
+            </div>
+            <div className="mt-18 m-8 bg-yellow-200 p-12 rounded-lg max-w-full">
+                <h1 className="uppercase flex justify-center items-center text-5xl font-bold mb-4">
+                    From cbse to upsc
+                </h1>
+                <div className="flex justify-around">
+                    <div className="w-3/5 mr-8">
+                        <p className="mb-20">
+                            "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates et adipisci maxime eveniet tempore. Tempore adipisci, quaerat exercitationem voluptates id temporibus reprehenderit aliquid est ut tempora eveniet voluptas dolores delectus!"
+                        </p>
+                        <p className="text-2xl">
+                            If you&apos;re a learner, this course is for you!
+                        </p>
+                    </div>
+                    <div className="flex justify-center">
+                        <ImageCard image="/adhyayan-logo.svg" />
+                    </div>
+                </div>
             </div>
         </div>
     );

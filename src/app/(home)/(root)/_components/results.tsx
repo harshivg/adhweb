@@ -37,7 +37,7 @@ const results = [
 export const Results = () => {
     return (
         <div className="w-full">
-            <h1 className="text-4xl font-bold">
+            <h1 className="text-5xl font-bold">
                 Our Results So Far
             </h1>
                     {/* add svg */}
@@ -46,7 +46,7 @@ export const Results = () => {
                 {
                     results.map((result, index) => {
                         return (
-                            <section key={index}>
+                            <section key={index} className="sticky top-20">
                                 <InfoCard 
                                     title={result.title}
                                     description={result.description}
