@@ -1,4 +1,4 @@
-import { studentTestimonials, teacherTestimonals } from "@/app/data/testimonials";
+import { studentTestimonials, teacherTestimonials } from "@/app/data/testimonials";
 import AutoScrollList from "./autoscroll-list";
 import { ImageCard } from "./image-card";
 import { TestimonialCard } from "./testimonial-card";
@@ -35,7 +35,7 @@ export const Testimonials = () => {
                 </h1>
                 <div className="md:hidden overflow-x-scroll flex gap-4">
                     {
-                        teacherTestimonals.map((testimonial, index) => {
+                        teacherTestimonials.map((testimonial, index) => {
                             return (
                                 <div key={index}>
                                     <TestimonialCard
@@ -49,17 +49,17 @@ export const Testimonials = () => {
                     }
                 </div>
                 <div className="hidden md:block">
-                    <AutoScrollList items={teacherTestimonals} />
+                    <AutoScrollList items={teacherTestimonials} />
                 </div>
             </div>
-            <div className="mt-18 m-8 bg-yellow-200 p-12 rounded-lg max-w-full">
+            <div className="mt-18 m-8 bg-[#FFE490] p-12 rounded-lg max-w-full">
                 <h1 className="uppercase flex justify-center items-center text-3xl md:text-5xl font-bold mb-4">
                     From cbse to upsc
                 </h1>
                 <div className="flex flex-col md:flex-row md:justify-around">
                     <div className="w-full sm:p-8 md:w-3/5 mr-8 mb-8">
                         <p className="mb-4 md:mb-20">
-                            "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates et adipisci maxime eveniet tempore. Tempore adipisci, quaerat exercitationem voluptates id temporibus reprehenderit aliquid est ut tempora eveniet voluptas dolores delectus!"
+                            "I cleared the highly competitive UPSC CAPF written exam on my first attempt with just 3-4 months of focused preparation. Adhyayan's systematic approach transformed my study routine. Their evidence-based techniques like the Feynman method for concept mastery, structured Pomodoro sessions for time management, and active recall practices significantly enhanced my retention. The practical, science-backed methods were instrumental in achieving this milestone. For anyone seeking efficient and proven study strategies, Adhyayan's approach delivers remarkable results." - Jaya Meena
                         </p>
                         <p className="hidden md:block text-2xl">
                             If you&apos;re a learner, this course is for you!

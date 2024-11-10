@@ -28,7 +28,7 @@ export const InfoCard = ({
     
 
     return (
-        <div className="w-full rounded-lg flex flex-col md:flex-row items-center justify-between bg-black p-4 md:h-[250px] shadow-sm border-2 border-black mb-8">
+        <div className="w-full rounded-lg flex flex-col md:flex-row items-center justify-evenly bg-black p-4 md:h-[250px] shadow-sm border-2 border-black mb-8">
             <div className="text-white w-full">
                 <h2 className="text-2xl md:text-4xl font-bold mb-8 w-full">
                     {title}
@@ -37,12 +37,20 @@ export const InfoCard = ({
                     {formatDescription(description)}
                 </p>
             </div>
-            <div>
+            <div className="flex items-center justify-center">
                 <Image 
+                    className="md:hidden"
                     src={image}
                     alt={image}
                     width={100}
                     height={100}
+                />
+                <Image 
+                    className="hidden md:block"
+                    src={image}
+                    alt={image}
+                    width={150}
+                    height={150}
                 />
             </div>
         </div>

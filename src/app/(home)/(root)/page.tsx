@@ -1,12 +1,15 @@
 import { Contact } from "./_components/contact";
 import { Gallery } from "./_components/gallery";
+import { Hero } from "./_components/hero";
 import { Results } from "./_components/results";
 import { Testimonials } from "./_components/testimonials";
 
 const Home = () => {
     return (
         <div>
-            {/* front page svg */}
+            <article>
+                <Hero />
+            </article>
             <article className="pl-4 pr-4 mb-20 lg:pl-40 lg:pr-40 lg:mt-40 lg:mb-40" id="results">
                 <Results />
             </article>

@@ -11,7 +11,7 @@ const HomeLayout = ({children}: {
                     <Navbar />
                 </div>
             </header>
-            <main className="pt-[140px] h-full">
+            <main className="pt-[20px] h-full">
                 {children}
             </main>
             <footer className="bg-yellow-400">
