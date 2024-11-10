@@ -3,7 +3,7 @@ import Image from "next/image"
 export const Hero = () => {
     return (
         <>
-            <div className="flex justify-end mr-4 md:mr-16">
+            <div className="flex justify-end mr-4 md:mr-64 md:mt-32">
                 <Image
                     src="/hero/upper-right-planet.svg"
                     alt="hero"
@@ -45,15 +45,15 @@ export const Hero = () => {
                     </div>
                 </div>
                 <p className="text-center mt-8 max-w-[500px] mb-8">
-                    Adhyayan is India&apos;s <b>first</b> educational outfit that helps students learn better. Focusing on the <b>HOW</b> of study helps students learn better themselves, therefore saves time. We teach students technique and hacks that <b>JUST WORK</b>. Our main aim is for students to gain the time to do what it is their heart desires, while reducing scrutiny around them by improving their scores.
+                India&apos;s first learning revolution starts with <b>HOW</b>, not <b>WHAT</b>. At Adhyayan, we empower students with game-changing study techniques backed by cognitive psychology that boost grades and save time. Because life&apos;s too short for endless studying.
                 </p>
             </div>
-            <div className="flex justify-start md:mr-16">
+            <div className="flex justify-start md:ml-64">
                 <Image
                     src="/hero/bottom-left-planet.svg"
                     alt="hero"
-                    height={100}
-                    width={100}
+                    height={150}
+                    width={150}
                 />
             </div>
         </>
