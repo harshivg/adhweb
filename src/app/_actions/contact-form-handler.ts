@@ -12,6 +12,7 @@ export const ContactFormHandler = async (
         name: formData.get("name") as string,
         email: formData.get("email") as string,
         message: formData.get("message") as string,
+        role: formData.get("role") as string,
     };
 
     const validatedContactForm = contactFormSchema.safeParse(unvalidatedContactForm);
@@ -23,12 +24,14 @@ export const ContactFormHandler = async (
             name: formData.get("name") as string,
             email: formData.get("email") as string,
             message: formData.get("message") as string,
+            role: formData.get("role") as string,
         };
 
         return { errors, data: contactData, blurs: {
             name: true,
             email: true,
-            message: true
+            message: true,
+            role: true
         }};
     }
     else{
@@ -39,7 +42,8 @@ export const ContactFormHandler = async (
             data: {
                 name: '',
                 email: '',
-                message: ''
+                message: '',
+                role: 'Student',
             }
         };
     }

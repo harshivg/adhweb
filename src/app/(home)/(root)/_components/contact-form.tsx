@@ -9,12 +9,14 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { contactFormSchema, ContactInfo } from "@/app/_schemas/contact-form-schema";
 import { convertZodErrors } from "@/app/_utils/errors";
+import { Select, SelectContent, SelectGroup, SelectItem, SelectLabel, SelectTrigger, SelectValue } from "@/components/ui/select";
 
 const initialState : ContactFormState<ContactInfo> = {};
 const initialData: ContactInfo = {
     name: "",
     email: "",
-    message: ""
+    message: "",
+    role: "student"
 }
 
 export default function ContactForm() {
@@ -109,6 +111,25 @@ export default function ContactForm() {
                 />
                 {blurs.message && errors?.message && <p>{errors?.message}</p>}
             </div>
+            <div>
+                <Label htmlFor="designation">Role</Label>
+                <Select>
+                <SelectTrigger className="w-full rounded-none">
+                    <SelectValue placeholder="Select a role" />
+                </SelectTrigger>
+                <SelectContent>
+                    <SelectGroup>
+                    <SelectLabel>Roles</SelectLabel>
+                    <SelectItem value="student">Student</SelectItem>
+                    <SelectItem value="teacher">Teacher</SelectItem>
+                    <SelectItem value="parent">Parent</SelectItem>
+                    <SelectItem value="institution">Institution</SelectItem>
+                    </SelectGroup>
+                </SelectContent>
+                </Select>
+                {blurs.role && errors?.role && <p>{errors?.role}</p>}
+            </div>
+
             <ContactFormSubmit />
         </form>
     )

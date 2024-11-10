@@ -1,38 +1,21 @@
 "use client";
-const schools = [
-    {
-        name: "GD Goenka",
-        images: ["/adhyayan-logo.svg", "/adhyayan-logo.svg", "/adhyayan-logo.svg", "/adhyayan-logo.svg", "/adhyayan-logo.svg"],
-    },
-    {
-        name: "DPS",
-        images: ["/adhyayan-logo.svg", "/adhyayan-logo.svg", "/adhyayan-logo.svg"],
-    },
-    {
-        name: "Ryan International",
-        images: ["/adhyayan-logo.svg", "/adhyayan-logo.svg"],
-    },
-    {
-        name: "Amity International",
-        images: ["/adhyayan-logo.svg"]
-    },
-]
 
 import { useState } from 'react';
 import { ImageCard } from './image-card';
 import { cn } from '@/lib/utils';
+import { schools } from '@/app/data/schools';
 
 export const Gallery = () => {
     const [selectedSchool, setSelectedSchool] = useState(schools[0]);
 
     return (
-        <div className="bg-black text-background w-full">
+        <div className="bg-black text-background w-full pt-8 pb-8">
             <h1 className="font-bold text-5xl mb-3">Gallery</h1>
-            <p className="text-slate-600 mb-5 w-3/5">
+            <p className="text-slate-600 mb-5 md:w-3/5">
                 Step inside our gallery of partner schools. Schools that have taken the first step in upgrading their student&apos;s learning experience.
             </p>
 
-            <div className="flex items-center gap-x-8">
+            <div className="flex items-center gap-x-8 overflow-x-scroll">
                 {schools.map((school, index) => (
                     <button
                         key={index}
@@ -47,7 +30,7 @@ export const Gallery = () => {
                 ))}
             </div>
 
-            <div className="mt-16 flex gap-4 justify-evenly">
+            <div className="mt-16 flex gap-4 justify-evenly overflow-x-auto">
                 {selectedSchool.images.length > 0 ? (
                     selectedSchool.images.map((image, index) => (
                         <ImageCard 
