@@ -1,7 +1,7 @@
 "use client";
 import { ContactFormHandler } from "@/app/_actions/contact-form-handler";
 import { ContactFormState, StringMap, StringToBooleanMap } from "@/app/_types/contact-form";
-import { useActionState, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import toast from "react-hot-toast";
 import ContactFormSubmit from "./contact-form-submit";
 import { Input } from "@/components/ui/input";
@@ -9,6 +9,7 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { contactFormSchema, ContactInfo } from "@/app/_schemas/contact-form-schema";
 import { convertZodErrors } from "@/app/_utils/errors";
+import { useFormState } from "react-dom";
 
 const initialState : ContactFormState<ContactInfo> = {};
 const initialData: ContactInfo = {
@@ -20,7 +21,7 @@ const initialData: ContactInfo = {
 
 export default function ContactForm() {
 
-    const [serverState, formAction] = useActionState(ContactFormHandler, initialState);
+    const [serverState, formAction] = useFormState(ContactFormHandler, initialState);
 
     const [blurs, setBlurs] = useState<StringToBooleanMap>(serverState.blurs || {});
     const [errors, setErrors] = useState<StringMap>(serverState.errors || {});
@@ -28,8 +29,6 @@ export default function ContactForm() {
 
 
     useEffect(() => {
-        console.log(serverState.data);
-
         if(serverState.successMsg){
             toast.success(serverState.successMsg);
             setBlurs({});

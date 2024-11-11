@@ -8,6 +8,7 @@ export const Results = () => {
         <div className="w-full">
             <h1 className="text-5xl font-bold flex justify-between">
                 Our Results
+                    <div className="flex">
                     <Image
                         src="/results/StarFour.svg"
                         alt="star"
@@ -22,6 +23,7 @@ export const Results = () => {
                         height={40}
                         loading="lazy"
                     />
+                    </div>
             </h1>   
             <div className="flex flex-col gap-y-3 mt-8">
                 {
