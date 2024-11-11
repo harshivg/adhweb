@@ -7,6 +7,7 @@ import { Toaster } from "react-hot-toast";
 const sen = Sen({
   variable: "--font-sen",
   weight: "variable",
+  subsets: ["latin"],
 })
 
 const geistSans = localFont({
