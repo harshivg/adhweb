@@ -1,27 +1,26 @@
-//FIX SCHOOLS
 export const schools = [
     {
         name: "GD Goenka",
-        images: ["/adhyayan-logo.svg", "/adhyayan-logo.svg", "/adhyayan-logo.svg", "/adhyayan-logo.svg", "/adhyayan-logo.svg"],
+        images: ["/gallery/GDGOENKA-1.png", "/gallery/GDGOENKA-2.png"],
     },
     {
         name: "The Pinnacle School",
-        images: ["/adhyayan-logo.svg", "/adhyayan-logo.svg", "/adhyayan-logo.svg"],
+        images: ["/gallery/TPS-1.png", "/gallery/TPS-2.png"],
     },
     {
         name: "Ryan International",
-        images: ["/adhyayan-logo.svg", "/adhyayan-logo.svg"],
+        images: ["/gallery/Ryan-1.png", "/gallery/Ryan-2.png"],
     },
     {
         name: "Raisena Bengali School",
-        images: ["/adhyayan-logo.svg"]
+        images: ["/gallery/Raisena-1.png", "/gallery/Raisena-2.png"],
     },
     {
         name: "GBN Sr Sec",
-        images: ["/adhyayan-logo.svg"]
+        images: ["/gallery/GBN-1.png", "/gallery/GBN-2.png"],
     },
     {
         name: "The Vivekananda School",
-        images: ["/adhyayan-logo.svg"]
+        images: ["/gallery/Vivekananda-1.png", "/gallery/Vivekananda-2.png"],
     }
 ]

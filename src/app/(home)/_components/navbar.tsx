@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Logo from "@/components/logo";
 import { routes } from "@/app/data/navbar-routes";
+import { MobileSidebar } from "./mobile-sidebar";
 
 export const Navbar = () => {
     return(
@@ -35,6 +36,10 @@ export const Navbar = () => {
             </Link>
             {/* add svg */}
         </div>
+            {/* mobile sidebar */}
+        {/* <div className="md:hidden">
+                <MobileSidebar />
+        </div> */}
     </div>
     );
 }

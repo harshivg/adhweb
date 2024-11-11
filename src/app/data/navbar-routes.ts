@@ -5,7 +5,7 @@ export const routes = [
     },
     {
         title: "Our Course",
-        href: "/course",
+        href: "https://adhyayanv1.vercel.app/",
     },
     {
         title: "Testimonials",

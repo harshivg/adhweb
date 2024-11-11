@@ -39,14 +39,14 @@ export const InfoCard = ({
             </div>
             <div className="flex items-center justify-center">
                 <Image 
-                    className="md:hidden"
+                    className="md:hidden h-auto"
                     src={image}
                     alt={image}
                     width={100}
                     height={100}
                 />
                 <Image 
-                    className="hidden md:block"
+                    className="hidden md:block h-auto"
                     src={image}
                     alt={image}
                     width={150}

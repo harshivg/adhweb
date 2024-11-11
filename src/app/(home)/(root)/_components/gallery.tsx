@@ -36,6 +36,8 @@ export const Gallery = () => {
                         <ImageCard 
                             key={index}
                             image={image}
+                            width={300}
+                            height={200}
                         />
                     ))
                 ) : (

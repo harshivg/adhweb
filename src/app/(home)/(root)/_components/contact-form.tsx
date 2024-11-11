@@ -84,7 +84,7 @@ export default function ContactForm() {
                     onBlur={handleOnBlur}
                     onChange={handleOnChange}
                     aria-required
-                    placeholder="Sahil Dewan"
+                    placeholder="Your Name"
                 />
                 {blurs.name && errors?.name && <p>{errors?.name}</p>}
             </div>
@@ -99,7 +99,7 @@ export default function ContactForm() {
                     onBlur={handleOnBlur}
                     onChange={handleOnChange}
                     aria-required
-                    placeholder="sahildewan@gmail.com"
+                    placeholder="Your Email"
                 />
                 {blurs.email && errors?.email && <p>{errors?.email}</p>}
             </div>
@@ -113,7 +113,7 @@ export default function ContactForm() {
                     onBlur={handleOnBlur}
                     onChange={handleOnChange}
                     aria-required
-                    placeholder="I am interested in learning more about your services"
+                    placeholder="What would you like to know?"
                 />
                 {blurs.message && errors?.message && <p>{errors?.message}</p>}
             </div>
