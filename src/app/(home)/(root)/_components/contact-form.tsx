@@ -1,7 +1,7 @@
 "use client";
 import { ContactFormHandler } from "@/app/_actions/contact-form-handler";
 import { ContactFormState, StringMap, StringToBooleanMap } from "@/app/_types/contact-form";
-import { useActionState, useEffect, useRef, useState } from "react";
+import { useActionState, useEffect, useState } from "react";
 import toast from "react-hot-toast";
 import ContactFormSubmit from "./contact-form-submit";
 import { Input } from "@/components/ui/input";
@@ -14,7 +14,8 @@ const initialState : ContactFormState<ContactInfo> = {};
 const initialData: ContactInfo = {
     name: "",
     email: "",
-    message: ""
+    message: "",
+    role: ""
 }
 
 export default function ContactForm() {
@@ -27,6 +28,8 @@ export default function ContactForm() {
 
 
     useEffect(() => {
+        console.log(serverState.data);
+
         if(serverState.successMsg){
             toast.success(serverState.successMsg);
             setBlurs({});
@@ -47,6 +50,7 @@ export default function ContactForm() {
 
     const handleOnChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         const { name, value } = e.target;
+
         setFormData((prev) => {
             const updatedData = ({ ...prev, [name]: value })
             const validated = contactFormSchema.safeParse(updatedData);
@@ -61,6 +65,7 @@ export default function ContactForm() {
 
             return updatedData;
         });
+
     }
 
     return (
@@ -79,6 +84,7 @@ export default function ContactForm() {
                     onBlur={handleOnBlur}
                     onChange={handleOnChange}
                     aria-required
+                    placeholder="Your Name"
                 />
                 {blurs.name && errors?.name && <p>{errors?.name}</p>}
             </div>
@@ -93,6 +99,7 @@ export default function ContactForm() {
                     onBlur={handleOnBlur}
                     onChange={handleOnChange}
                     aria-required
+                    placeholder="Your Email"
                 />
                 {blurs.email && errors?.email && <p>{errors?.email}</p>}
             </div>
@@ -106,9 +113,26 @@ export default function ContactForm() {
                     onBlur={handleOnBlur}
                     onChange={handleOnChange}
                     aria-required
+                    placeholder="What would you like to know?"
                 />
                 {blurs.message && errors?.message && <p>{errors?.message}</p>}
             </div>
+            <div>
+                <Label htmlFor="role">Role</Label>
+                <Input 
+                    type="text" 
+                    name="role"
+                    id="role" 
+                    value={formData.role}
+                    className="rounded-none bg-slate-700 border-none"
+                    onBlur={handleOnBlur}
+                    onChange={handleOnChange}
+                    aria-required
+                    placeholder="Student"
+                />
+                {blurs.role && errors?.role && <p>{errors?.role}</p>}
+            </div>
+
             <ContactFormSubmit />
         </form>
     )

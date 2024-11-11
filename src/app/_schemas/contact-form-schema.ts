@@ -10,6 +10,9 @@ export const contactFormSchema = z.object({
     message: z.string().min(1, {
         message: "Message is required",
     }),
+    role: z.string().min(1, {
+        message: "Role is required",
+    }),
 })
 
 export type ContactInfo = z.infer<typeof contactFormSchema>;

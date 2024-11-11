@@ -66,8 +66,8 @@ const contact = [
 
 export const Footer = () => {
     return (
-        <div className="flex justify-around p-8">
-            <div>
+        <div className="flex justify-around p-4 lg:p-8">
+            <div className="hidden md:block">
                 <h1 className="uppercase text-4xl font-bold">
                     Adhyayan
                 </h1>

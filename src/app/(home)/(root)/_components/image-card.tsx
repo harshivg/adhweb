@@ -1,3 +1,4 @@
+import { cn } from "@/lib/utils";
 import Image from "next/image"
 
 interface ImageCardProps {
@@ -8,7 +9,7 @@ interface ImageCardProps {
 
 export const ImageCard = ({
     image,
-    height = 350,
+    height = 200,
     width = 200,
 }: ImageCardProps) => {
     return (
@@ -17,7 +18,10 @@ export const ImageCard = ({
             alt="image"
             height={height}
             width={width}
-            className="rounded-lg bg-white border-2 border-white"
+            className={cn(
+                "rounded-lg bg-white border-2 border-white",
+                `h-${height} w-${width}`
+            )}
         />
     )
 }

@@ -6,6 +6,7 @@ interface Testimonial {
     name: string;
     designation: string;
     testimonial: string;
+    image?: string;
 }
 
 interface AutoScrollListProps {
@@ -52,25 +53,25 @@ const AutoScrollList = ({
       ref={containerRef}
       onMouseEnter={() => {
         setIsHovered(true);
-        setIsScrolling(false);  // Pause auto-scrolling on hover
+        setIsScrolling(false);  
       }}
       onMouseLeave={() => setIsHovered(false)}
       onWheel={(e) => {
         if (!isHovered) {
-          setIsScrolling(true);  // Let user control the scroll
+          setIsScrolling(true);  
         }
       }}
       style={{
         display: "flex",
-        overflowX: isHovered ? "auto" : "hidden",  // Allow manual scroll on hover
+        overflowX: isHovered ? "auto" : "hidden",  
         whiteSpace: "nowrap",
-        scrollBehavior: "smooth",  // Smooth transition for scrolling
+        scrollBehavior: "smooth",  
         msOverflowStyle: "none",
         scrollbarWidth: "none",
-        cursor: isHovered ? "grab" : "auto",  // Change cursor when hovering
+        cursor: isHovered ? "grab" : "auto",  
       }}
     >
-      {[...items, ...items].map((item, index) => (
+      {[...items].map((item, index) => (
         <div key={index} style={{ minWidth: "300px" }}>
           <TestimonialCard {...item} />
         </div>
