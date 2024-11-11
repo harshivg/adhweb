@@ -5,7 +5,7 @@ export const schools = [
         images: ["/adhyayan-logo.svg", "/adhyayan-logo.svg", "/adhyayan-logo.svg", "/adhyayan-logo.svg", "/adhyayan-logo.svg"],
     },
     {
-        name: "DPS",
+        name: "The Pinnacle School",
         images: ["/adhyayan-logo.svg", "/adhyayan-logo.svg", "/adhyayan-logo.svg"],
     },
     {
@@ -13,7 +13,15 @@ export const schools = [
         images: ["/adhyayan-logo.svg", "/adhyayan-logo.svg"],
     },
     {
-        name: "Amity International",
+        name: "Raisena Bengali School",
         images: ["/adhyayan-logo.svg"]
     },
+    {
+        name: "GBN Sr Sec",
+        images: ["/adhyayan-logo.svg"]
+    },
+    {
+        name: "The Vivekananda School",
+        images: ["/adhyayan-logo.svg"]
+    }
 ]

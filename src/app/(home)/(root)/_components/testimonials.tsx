@@ -42,6 +42,7 @@ export const Testimonials = () => {
                                         name={testimonial.name}
                                         designation={testimonial.designation}
                                         testimonial={testimonial.testimonial}
+                                        image={testimonial.image}
                                     />
                                 </div>
                             );
@@ -52,7 +53,7 @@ export const Testimonials = () => {
                     <AutoScrollList items={teacherTestimonials} />
                 </div>
             </div>
-            <div className="mt-18 m-8 bg-[#FFE490] p-12 rounded-lg max-w-full">
+            <div className="mt-16 m-8 bg-[#FFE490] p-12 rounded-lg max-w-full">
                 <h1 className="uppercase flex justify-center items-center text-3xl md:text-5xl font-bold mb-4">
                     From cbse to upsc
                 </h1>

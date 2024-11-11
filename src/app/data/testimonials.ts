@@ -80,31 +80,44 @@ export const teacherTestimonials = [
     {
         name: "Dr. Nisha",
         designation: "Principal, GBN SR SEC",
-        testimonial: "The workshop was exceptionally well-conducted and received enthusiastically by our students. The energy and expertise of the resource persons was truly commendable, making it stand out from other workshops."
+        testimonial: "The workshop was exceptionally well-conducted and received enthusiastically by our students. The energy and expertise of the resource persons was truly commendable, making it stand out from other workshops.",
+        image: "/testimonials/teacher-testimonials/dr-nisha.png"
     },
     {
         name: "Mrs. Kakuli",
         designation: "Vice Principal, RSB CRPARK",
-        testimonial: "It's not just about studying smarter; it's about living fuller. I'm thrilled to see my students thrive both in and out of the classroom through this holistic learning approach."
+        testimonial: "It's not just about studying smarter; it's about living fuller. I'm thrilled to see my students thrive both in and out of the classroom through this holistic learning approach.",
+        image: "/testimonials/teacher-testimonials/mrs-kakuli.jpg"
     },
     {
         name: "Mrs. Archana",
         designation: "Principal, The Vivekanda",
-        testimonial: "The session was absolutely fabulous! Our students' enthusiasm was overwhelming - they really loved every aspect. The interactive approach and practical strategies resonated deeply."
+        testimonial: "The session was absolutely fabulous! Our students' enthusiasm was overwhelming - they really loved every aspect. The interactive approach and practical strategies resonated deeply.",
+        image: "/testimonials/teacher-testimonials/mrs-archana.png"
     },
     {
         name: "Mrs. Deepti",
         designation: "HOD English, TPS Panchsheel",
-        testimonial: "I was genuinely blown away by this presentation's effectiveness. This promising young educator has a remarkable gift for making learning engaging and enjoyable."
+        testimonial: "I was genuinely blown away by this presentation's effectiveness. This promising young educator has a remarkable gift for making learning engaging and enjoyable.",
+        image: "/testimonials/teacher-testimonials/mrs-deepti.jpg"
     },
     {
         name: "Ms Urvashi",
         designation: "TIC, GD GOENKA",
-        testimonial: "I'm confident our students will experience a significant shift in their learning approaches. The workshop's research-based methodology provides a solid foundation for lasting improvement."
+        testimonial: "I'm confident our students will experience a significant shift in their learning approaches. The workshop's research-based methodology provides a solid foundation for lasting improvement.",
+        image: "/testimonials/teacher-testimonials/ms-urvashi.jpg"
     },
     {
         name: "Mrs. Peeya",
         designation: "Principal, Ryan International",
-        testimonial: "The workshop was remarkably innovative and engaging, offering students fresh perspectives. The interactive sessions equipped students with immediately applicable learning techniques."
+        testimonial: "The workshop was remarkably innovative and engaging, offering students fresh perspectives. The interactive sessions equipped students with immediately applicable learning techniques.",
+        image: "testimonials/teacher-testimonials/mrs-peeya.jpg"
     }
 ]
+
+export interface TeacherTestimonial {
+    name: string;
+    designation: string;
+    testimonial: string;
+    image: string;
+}

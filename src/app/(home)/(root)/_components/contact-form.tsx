@@ -1,7 +1,7 @@
 "use client";
 import { ContactFormHandler } from "@/app/_actions/contact-form-handler";
 import { ContactFormState, StringMap, StringToBooleanMap } from "@/app/_types/contact-form";
-import { useActionState, useEffect, useRef, useState } from "react";
+import { useActionState, useEffect, useState } from "react";
 import toast from "react-hot-toast";
 import ContactFormSubmit from "./contact-form-submit";
 import { Input } from "@/components/ui/input";
@@ -9,14 +9,13 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { contactFormSchema, ContactInfo } from "@/app/_schemas/contact-form-schema";
 import { convertZodErrors } from "@/app/_utils/errors";
-import { Select, SelectContent, SelectGroup, SelectItem, SelectLabel, SelectTrigger, SelectValue } from "@/components/ui/select";
 
 const initialState : ContactFormState<ContactInfo> = {};
 const initialData: ContactInfo = {
     name: "",
     email: "",
     message: "",
-    role: "student"
+    role: ""
 }
 
 export default function ContactForm() {
@@ -29,6 +28,8 @@ export default function ContactForm() {
 
 
     useEffect(() => {
+        console.log(serverState.data);
+
         if(serverState.successMsg){
             toast.success(serverState.successMsg);
             setBlurs({});
@@ -49,6 +50,7 @@ export default function ContactForm() {
 
     const handleOnChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         const { name, value } = e.target;
+
         setFormData((prev) => {
             const updatedData = ({ ...prev, [name]: value })
             const validated = contactFormSchema.safeParse(updatedData);
@@ -63,6 +65,7 @@ export default function ContactForm() {
 
             return updatedData;
         });
+
     }
 
     return (
@@ -81,6 +84,7 @@ export default function ContactForm() {
                     onBlur={handleOnBlur}
                     onChange={handleOnChange}
                     aria-required
+                    placeholder="Sahil Dewan"
                 />
                 {blurs.name && errors?.name && <p>{errors?.name}</p>}
             </div>
@@ -95,6 +99,7 @@ export default function ContactForm() {
                     onBlur={handleOnBlur}
                     onChange={handleOnChange}
                     aria-required
+                    placeholder="sahildewan@gmail.com"
                 />
                 {blurs.email && errors?.email && <p>{errors?.email}</p>}
             </div>
@@ -108,25 +113,23 @@ export default function ContactForm() {
                     onBlur={handleOnBlur}
                     onChange={handleOnChange}
                     aria-required
+                    placeholder="I am interested in learning more about your services"
                 />
                 {blurs.message && errors?.message && <p>{errors?.message}</p>}
             </div>
             <div>
-                <Label htmlFor="designation">Role</Label>
-                <Select>
-                <SelectTrigger className="w-full rounded-none">
-                    <SelectValue placeholder="Select a role" />
-                </SelectTrigger>
-                <SelectContent>
-                    <SelectGroup>
-                    <SelectLabel>Roles</SelectLabel>
-                    <SelectItem value="student">Student</SelectItem>
-                    <SelectItem value="teacher">Teacher</SelectItem>
-                    <SelectItem value="parent">Parent</SelectItem>
-                    <SelectItem value="institution">Institution</SelectItem>
-                    </SelectGroup>
-                </SelectContent>
-                </Select>
+                <Label htmlFor="role">Role</Label>
+                <Input 
+                    type="text" 
+                    name="role"
+                    id="role" 
+                    value={formData.role}
+                    className="rounded-none bg-slate-700 border-none"
+                    onBlur={handleOnBlur}
+                    onChange={handleOnChange}
+                    aria-required
+                    placeholder="Student"
+                />
                 {blurs.role && errors?.role && <p>{errors?.role}</p>}
             </div>
 

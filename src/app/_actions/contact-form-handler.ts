@@ -7,6 +7,7 @@ export const ContactFormHandler = async (
     prevState: ContactFormState<StringMap>,
     formData: FormData
 ): Promise<ContactFormState<ContactInfo>> => {
+    console.log("form data", formData);
 
     const unvalidatedContactForm:StringMap = {
         name: formData.get("name") as string,
@@ -43,7 +44,7 @@ export const ContactFormHandler = async (
                 name: '',
                 email: '',
                 message: '',
-                role: 'Student',
+                role: '',
             }
         };
     }
