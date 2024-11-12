@@ -31,18 +31,23 @@ export const Gallery = () => {
             </div>
 
             <div className="mt-16 flex gap-4 justify-evenly overflow-x-auto">
-                {selectedSchool.images.length > 0 ? (
-                    selectedSchool.images.map((image, index) => (
-                        <ImageCard 
-                            key={index}
-                            image={image}
-                            width={300}
-                            height={200}
-                        />
-                    ))
-                ) : (
-                    <p>No images available for {selectedSchool.name}</p>
-                )}
+                {
+                    selectedSchool.videos.length > 0 ? (
+                        selectedSchool.videos.map((video, index) => (
+                        <video width="320" height="240" controls key={index}>
+                                <source src={video} type="video/mp4"></source>
+                        </video>
+                        ))
+                    ) : (
+                        selectedSchool.images.map((image, index) => (
+                            <ImageCard
+                                key={index}
+                                image={image}
+                                height={200}
+                            />
+                        ))
+                    )
+                }
             </div>
         </div>
     );
