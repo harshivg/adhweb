@@ -34,7 +34,7 @@ export const Gallery = () => {
                 {
                     selectedSchool.videos.length > 0 ? (
                         selectedSchool.videos.map((video, index) => (
-                        <video width="320" height="240" controls key={index}>
+                        <video width="320" height="240" controls key={`${selectedSchool.name}-${index}`} autoPlay>
                                 <source src={video} type="video/mp4"></source>
                         </video>
                         ))

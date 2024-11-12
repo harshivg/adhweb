@@ -28,7 +28,7 @@ export const InfoCard = ({
     
 
     return (
-        <div className="w-full rounded-lg flex flex-col md:flex-row items-center justify-evenly bg-black p-4 md:h-[250px] shadow-sm border-2 border-black mb-8">
+        <div className="w-full rounded-lg flex flex-col md:flex-row items-center justify-evenly bg-black p-4 h-[400px] md:h-[250px] shadow-sm border-2 border-black mb-8">
             <div className="text-white w-full">
                 <h2 className="text-2xl md:text-4xl font-bold mb-8 w-full">
                     {title}
