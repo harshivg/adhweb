@@ -12,7 +12,7 @@ export const Hero = () => {
                 />
             </div>
             <div className="flex items-center flex-col justify-center">
-                <h1 className="text-4xl md:text-6xl font-bold text-center uppercase">
+                <h1 className="text-4xl md:text-8xl font-bold text-center uppercase">
                     adhyayan
                 </h1>
                 <p className="text-center mt-4 lowercase">
@@ -44,7 +44,7 @@ export const Hero = () => {
                         <div className="text-xl md:text-3xl font-bold">more</div> 
                     </div>
                 </div>
-                <p className="text-center mt-8 max-w-[500px] mb-8">
+                <p className="text-center mt-8 max-w-[500px] mb-8 lg:text-xl">
                 India&apos;s first learning revolution starts with <b>HOW</b>, not <b>WHAT</b>. At Adhyayan, we empower students with game-changing study techniques backed by cognitive psychology that boost grades and save time. Because life&apos;s too short for endless studying.
                 </p>
             </div>
