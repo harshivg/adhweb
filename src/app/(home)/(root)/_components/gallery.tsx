@@ -1,13 +1,40 @@
 "use client";
 
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { ImageCard } from './image-card';
 import { cn } from '@/lib/utils';
 import { schools } from '@/app/data/schools';
 
 export const Gallery = () => {
     const [selectedSchool, setSelectedSchool] = useState(schools[0]);
+    const videoRefs = useRef<HTMLVideoElement[]>([]);
 
+    useEffect(() => {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                const video = entry.target as HTMLVideoElement;
+
+                if (entry.isIntersecting) {
+                    video.play();
+                } else {
+                    video.pause();
+                }
+            });
+        }
+        , { threshold: 0.5 });
+
+        videoRefs.current?.forEach((video) => {
+            observer.observe(video);
+        });
+
+        return () => {
+            videoRefs.current?.forEach((video) => {
+                if(video) observer.unobserve(video);
+            });
+        }
+
+    }, [selectedSchool])
+    
     return (
         <div className="bg-black text-background w-full pt-8 pb-8">
             <h1 className="font-bold text-5xl mb-3">Gallery</h1>
@@ -34,7 +61,17 @@ export const Gallery = () => {
                 {
                     selectedSchool.videos.length > 0 ? (
                         selectedSchool.videos.map((video, index) => (
-                        <video width="320" height="240" controls key={`${selectedSchool.name}-${index}`} autoPlay>
+                        <video 
+                            width="320" 
+                            height="240" 
+                            controls 
+                            key={`${selectedSchool.name}-${index}`} 
+                            ref={(el) => {
+                                if (el) {
+                                    videoRefs.current![index] = el;
+                                }
+                            }}
+                        >
                                 <source src={video} type="video/mp4"></source>
                         </video>
                         ))
