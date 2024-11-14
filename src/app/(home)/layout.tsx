@@ -6,7 +6,7 @@ const HomeLayout = ({children}: {
 }) => {
     return ( 
         <div className="h-full">
-            <header className="h-[80px] inset-y-0 w-full z-50">
+            <header className="h-[80px] inset-y-0 w-full z-50 sticky top-0">
                 <div className="md:ml-[60px] md:mr-[60px] mb-4 md:mt-6">
                     <Navbar />
                 </div>

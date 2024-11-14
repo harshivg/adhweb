@@ -29,7 +29,7 @@ export const Results = () => {
                 {
                     results.map((result, index) => {
                         return (
-                            <section key={index} className="sticky top-20">
+                            <section key={index} className="sticky top-24">
                                 <InfoCard 
                                     title={result.title}
                                     description={result.description}
