@@ -64,6 +64,19 @@ const contact = [
     },
 ]
 
+const socials = [
+    {
+        title: "Instagram",
+        href: "https://www.instagram.com/adhyayan.co/",
+        img: "/footer/instagram.svg",
+    },
+    {
+        title: "LinkedIn",
+        href: "https://www.linkedin.com/in/sahil-dewan-0442a522a/",
+        img: "/footer/linkedin.svg",
+    },
+]
+
 export const Footer = () => {
     return (
         <div className="flex justify-around p-4 lg:p-8">
@@ -94,17 +107,24 @@ export const Footer = () => {
                     </div>
 
                     <h3 className="text-blue-800 text-xl font-semibold mt-8">
-                        Legal
+                        Socials
                     </h3>
                     <div className="flex flex-col gap-y-4">
                         {
-                            legal.map((item, index) => {
+                            socials.map((item, index) => {
                                 return (
                                     <Link 
                                         href={item.href}
                                         key={index}
-                                    >
-                                        {item.title}
+                                    >   
+                                        <div className="flex items-center">
+                                            <img 
+                                                src={item.img}
+                                                alt={item.title}
+                                                className="w-5 h-5 mr-2"
+                                            />
+                                            {item.title}
+                                        </div>
                                     </Link>
                                 )
                             })
@@ -136,6 +156,24 @@ export const Footer = () => {
                     <div className="flex flex-col gap-y-4">
                         {
                             contact.map((item, index) => {
+                                return (
+                                    <Link 
+                                        href={item.href}
+                                        key={index}
+                                    >
+                                        {item.title}
+                                    </Link>
+                                )
+                            })
+                        }
+                    </div>
+
+                    <h3 className="text-blue-800 text-xl font-semibold mt-8">
+                        Legal
+                    </h3>
+                    <div className="flex flex-col gap-y-4">
+                        {
+                            legal.map((item, index) => {
                                 return (
                                     <Link 
                                         href={item.href}
