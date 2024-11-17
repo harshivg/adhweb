@@ -26,7 +26,7 @@ export const Navbar = () => {
                     })
                 }
         </div>
-        <div className="pl-4 pr-4">
+        <div className="pl-4 pr-4 flex items-center justify-center md:w-1/5">
             <Link 
                 href="#contact"
                 className="text-white font-bold"

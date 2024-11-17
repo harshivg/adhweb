@@ -10,7 +10,7 @@ export default function ContactFormSubmit() {
         <Button 
             type="submit" 
             disabled={pending} 
-            className="w-full uppercase mt-8 p-8 bg-yellow-400 text-black text-xl font-bold flex items-center justify-center rounded-none hover:bg-yellow-500"
+            className="w-full uppercase mt-8 p-8 bg-yellow-400 text-black text-xl font-bold flex items-center justify-center rounded-none hover:bg-yellow-500 transition-transform transform hover:scale-105 shadow-lg"
         >
             Let&apos;s get started
         </Button>
