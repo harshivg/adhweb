@@ -42,7 +42,7 @@ export const Gallery = () => {
                 Step inside our gallery of partner schools. Schools that have taken the first step in upgrading their student&apos;s learning experience.
             </p>
 
-            <div className="flex items-center gap-x-8 overflow-x-scroll">
+            <div className="flex items-center gap-x-8 overflow-x-scroll scrollbar-none">
                 {schools.map((school, index) => (
                     <button
                         key={index}

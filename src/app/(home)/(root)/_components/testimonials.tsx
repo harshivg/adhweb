@@ -10,7 +10,7 @@ export const Testimonials = () => {
                 <h1 className="pl-20 lg:pl-40 lg:pr-40 font-bold text-4xl mb-6">
                     Student Testimonials
                 </h1>
-                <div className="md:hidden overflow-x-scroll flex gap-4">
+                <div className="overflow-x-scroll flex gap-4 scrollbar-mini">
                     {
                         studentTestimonials.map((testimonial, index) => {
                             return (
@@ -25,15 +25,15 @@ export const Testimonials = () => {
                         })
                     }
                 </div>
-                <div className="hidden md:block">
+                {/* <div className="hidden md:block">
                     <AutoScrollList items={studentTestimonials} />
-                </div>
+                </div> */}
             </div>
             <div>
                 <h1 className="pl-20 lg:pl-40 lg:pr-40 font-bold text-4xl mt-16 mb-6">
                     Teacher Testimonials
                 </h1>
-                <div className="md:hidden overflow-x-scroll flex gap-4">
+                <div className="overflow-x-scroll flex gap-4 scrollbar-mini">
                     {
                         teacherTestimonials.map((testimonial, index) => {
                             return (
@@ -49,9 +49,9 @@ export const Testimonials = () => {
                         })
                     }
                 </div>
-                <div className="hidden md:block">
+                {/* <div className="hidden md:block">
                     <AutoScrollList items={teacherTestimonials} />
-                </div>
+                </div> */}
             </div>
             <div className="mt-16 m-8 bg-[#FFE490] p-12 rounded-lg max-w-full">
                 <h1 className="uppercase flex justify-center items-center text-3xl md:text-5xl font-bold mb-4">
