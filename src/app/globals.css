@@ -76,6 +76,47 @@ body {
   }
 }
 
+/* Custom scrollbar styling for Chrome, Safari, Edge */
+
+/* Invisible scrollbar for WebKit-based browsers */
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+
+/* For Firefox (optional) */
+.scrollbar-none {
+  scrollbar-width: none; /* Hides scrollbar in Firefox */
+}
+
+
+.scrollbar-mini::-webkit-scrollbar {
+  width: 10px;               /* Width of the scrollbar */
+}
+
+.scrollbar-mini::-webkit-scrollbar-track {
+  background: #f1f1f1;       /* Background of the scrollbar track */
+  border-radius: 10px;
+}
+
+.scrollbar-mini::-webkit-scrollbar-thumb {
+  background-color: #888;    /* Color of the scrollbar thumb */
+  border-radius: 10px;
+  border: 2px solid #f1f1f1; /* Adds space around the thumb */
+}
+
+.scrollbar-mini::-webkit-scrollbar-thumb:hover {
+  background-color: #313030; /* Color when hovering over the thumb */
+}
+
+
+/* Custom scrollbar for Firefox and WebKit */
+.scrollbar-mini {
+  scrollbar-width: thin;             /* Width of scrollbar in Firefox */
+  scrollbar-color: #888 #f1f1f1;     /* Thumb color #888, track color #f1f1f1 */
+}
+
+
+
 
 
 
