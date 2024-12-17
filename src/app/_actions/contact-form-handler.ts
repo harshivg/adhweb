@@ -2,6 +2,11 @@
 import { contactFormSchema, ContactInfo } from "../_schemas/contact-form-schema";
 import { ContactFormState, StringMap } from "../_types/contact-form";
 import { convertZodErrors } from "../_utils/errors";
+import { createClient } from '@supabase/supabase-js'
+
+const supabaseUrl = process.env.SUPABASE_URL as string
+const supabaseKey = process.env.SUPABASE_KEY as string
+const supabase = createClient(supabaseUrl, supabaseKey)
 
 export const ContactFormHandler = async (
     prevState: ContactFormState<StringMap>,
@@ -36,15 +41,52 @@ export const ContactFormHandler = async (
     }
     else{
         //add db call
-        return { 
-            successMsg: "Form submitted successfully", 
-            errors: {}, 
-            data: {
-                name: '',
-                email: '',
-                message: '',
-                role: '',
+        const {name, email, message, role} = validatedContactForm.data;
+
+        try{
+            const { data, error } = await supabase
+                .from('contact-form')
+                .insert([
+                    { name, email, message, role }
+                ])
+            
+            if(error){
+                // console.log(data, error);
+                return {
+                    successMsg: "Form submission failed",
+                    errors: {},
+                    data: {
+                        name: name,
+                        email: email,
+                        message: message,
+                        role: role,
+                    }
+                }
             }
-        };
+
+            return { 
+                successMsg: "Form submitted successfully", 
+                errors: {}, 
+                data: {
+                    name: '',
+                    email: '',
+                    message: '',
+                    role: '',
+                }
+            };
+        }
+        catch(error){
+            // console.log("2", error);
+            return {
+                successMsg: "Form submission failed",
+                errors: {},
+                data: {
+                    name: name,
+                    email: email,
+                    message: message,
+                    role: role,
+                }
+            }
+        }
     }
 }
